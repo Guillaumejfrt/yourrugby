@@ -2,21 +2,48 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-import { createStore, combineReducers } from 'redux';
+// external-modules: To navigate in the app in the browser
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { createHistory as history } from 'history';
+// external-modules: We add 'applyMiddleware' when we use middleware like logger:
+import { createStore, combineReducers, applyMiddleware } from 'redux';
+
+// middleware: To get the result of API fetch:
+import reduxPromise from 'redux-promise';
+
+// middleware: To display the action payload in the brower console:
+import logger from 'redux-logger';
+
+
+// To use forms:
+// import { reducer as formReducer } from 'redux-form';
 
 // internal modules
-import App from './components/app';
+import Home from './components/home';
 import '../assets/stylesheets/application.scss';
 
-// State and reducers
+// logger must be the last middleware in chain, otherwise it will log thunk and promise, not actual actions
+const middlewares = applyMiddleware(reduxPromise, logger);
+
+// We declare the initial state if needed, if so, we then give it to the store
+const initialState = {};
+
+// We declare the reducers
 const reducers = combineReducers({
   changeMe: (state = null, action) => state
 });
 
+// We create the store
+const store = createStore(reducers, initialState, middlewares);
+
 // render an instance of the component in the DOM
 ReactDOM.render(
-  <Provider store={createStore(reducers)}>
-    <App />
+  <Provider store={store}>
+    <Router history={history}>
+      <Switch>
+        <Route path="/" exact component={Home} />
+      </Switch>
+    </Router>
   </Provider>,
   document.querySelector('.container')
 );
