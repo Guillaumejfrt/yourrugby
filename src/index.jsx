@@ -29,7 +29,10 @@ import '../assets/stylesheets/application.scss';
 const middlewares = applyMiddleware(reduxPromise, logger);
 
 // We declare the initial state if needed, if so, we then give it to the store
-const initialState = {};
+const initialState = {
+  categories: ["Top14", "Super15", "Aviva Premiership"]
+  selectCategory: "Top14"
+};
 
 // We declare the reducers
 const reducers = combineReducers({

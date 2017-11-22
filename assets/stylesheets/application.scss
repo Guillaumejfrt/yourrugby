@@ -1,9 +1,24 @@
-body {
-  color: white;
-  background-color: black;
-}
-
 .app {
   margin-top: 20px;
   margin-bottom: 20px;
 }
+.header {
+  text-align: center;
+}
+.categories-container {
+  margin-top: 50px;
+  text-align: center;
+}
+
+.inline {
+  padding-left: 0px;
+  display: flex;
+  justify-content: space-around;
+  li {
+    display: inline;
+    margin-left: 20px;
+    cursor: pointer;
+  }
+}
+
+

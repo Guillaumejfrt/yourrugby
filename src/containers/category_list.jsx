@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
+import { selectCategory } from '../actions/index';
 
-class CategorylList extends Component {
+class CategoryList extends Component {
   handleClick = (category) => {
     this.props.selectCategory(category);
   }
@@ -13,7 +14,7 @@ class CategorylList extends Component {
         key={category}
         className={category === this.props.selectedCategory ? 'active' : null}
         onClick={() => this.handleClick(category)}>
-        #{category}
+        {category}
       </li>
     )
   }
@@ -21,8 +22,7 @@ class CategorylList extends Component {
   render() {
     return (
       <div className="categories-container">
-        <span>Categories</span>
-        <ul>
+        <ul className="inline">
           {this.props.categories.map(this.renderCategory)}
         </ul>
       </div>
