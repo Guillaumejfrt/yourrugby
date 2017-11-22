@@ -20,6 +20,9 @@ import logger from 'redux-logger';
 
 // internal modules
 import Home from './components/home';
+import categoriesReducer from './reducers/categories_reducer';
+import selectedCategoryReducer from './reducers/selected_category_reducer';
+import videosReducer from './reducers/videos_reducer';
 import '../assets/stylesheets/application.scss';
 
 // logger must be the last middleware in chain, otherwise it will log thunk and promise, not actual actions
@@ -30,7 +33,9 @@ const initialState = {};
 
 // We declare the reducers
 const reducers = combineReducers({
-  changeMe: (state = null, action) => state
+  categories: categoriesReducer,
+  selectedCategory: selectedCategoryReducer,
+  videos: videosReducer
 });
 
 // We create the store
