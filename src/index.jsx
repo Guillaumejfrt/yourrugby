@@ -23,6 +23,7 @@ import Home from './components/home';
 import categoriesReducer from './reducers/categories_reducer';
 import selectedCategoryReducer from './reducers/selected_category_reducer';
 import videosReducer from './reducers/videos_reducer';
+import selectedVideoReducer from './reducers/selected_video_reducer';
 import '../assets/stylesheets/application.scss';
 
 // logger must be the last middleware in chain, otherwise it will log thunk and promise, not actual actions
@@ -30,15 +31,16 @@ const middlewares = applyMiddleware(reduxPromise, logger);
 
 // We declare the initial state if needed, if so, we then give it to the store
 const initialState = {
-  categories: ["Top14", "Super15", "Aviva Premiership"]
-  selectCategory: "Top14"
+  categories: ["Top14", "Super15", "Aviva Premiership"],
+  selectedCategory: "Top14"
 };
 
 // We declare the reducers
 const reducers = combineReducers({
   categories: categoriesReducer,
   selectedCategory: selectedCategoryReducer,
-  videos: videosReducer
+  videos: videosReducer,
+  selectedVideo: selectedVideoReducer
 });
 
 // We create the store

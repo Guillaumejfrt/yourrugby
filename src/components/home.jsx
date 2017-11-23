@@ -1,5 +1,6 @@
 import React from 'react';
 import CategoryList from '../containers/category_list';
+import VideoList from '../containers/video_list';
 
 const Home = () => {
   return (
@@ -8,6 +9,7 @@ const Home = () => {
         <h1>Yourrugby home</h1>
       </div>
       <CategoryList/>
+      <VideoList/>
     </div>
   );
 };

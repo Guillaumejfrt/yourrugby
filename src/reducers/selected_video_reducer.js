@@ -1,8 +1,8 @@
-import { SELECTED_CATEGORY } from '../actions/index';
+import { SELECTED_VIDEO } from '../actions/index';
 
 export default function(state = null, action) {
   switch (action.type) {
-    case SELECTED_CATEGORY:
+    case SELECTED_VIDEO:
       return action.payload;
     default:
       return state;
