@@ -9,11 +9,10 @@ import { Video } from './video';
 class VideoList extends Component {
 
   componentWillMount() {
+    this.props.fetchVideos(this.props.selectedCategory);
   }
 
   componentDidMount() {
-    debugger
-    this.props.fetchVideos(this.props.selectedCategory);
     this.selectVideo(this.props.videos[0]);
   }
 
@@ -31,10 +30,10 @@ class VideoList extends Component {
 }
 
 function mapStateToProps(state) {
-  return {
+    return {
     videos: state.videos,
     categories: state.categories,
-    selectedcategory: state.selectedCategory
+    selectedCategory: state.selectedCategory
   };
 }
 
