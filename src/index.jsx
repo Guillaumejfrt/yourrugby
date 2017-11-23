@@ -32,7 +32,8 @@ const middlewares = applyMiddleware(reduxPromise, logger);
 // We declare the initial state if needed, if so, we then give it to the store
 const initialState = {
   categories: ["Top14", "Super15", "Aviva Premiership"],
-  selectedCategory: "Top14"
+  selectedCategory: "Top14",
+  videos: []
 };
 
 // We declare the reducers

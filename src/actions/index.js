@@ -22,8 +22,8 @@ export function selectCategory(category) {
 }
 
 export function fetchVideos(category) {
-
-  youtubeSearch = (category) => {
+  debugger
+  const youtubeSearch = (category) => {
     return (
       YTSearch({ key: API_KEY, term: category }, (videos) => {
         return videos;

@@ -3,35 +3,22 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
 import { fetchVideos } from '../actions';
+import { selectVideo } from '../actions';
 import { Video } from './video';
 
 class VideoList extends Component {
 
   componentWillMount() {
-    this.fetchVideos();
   }
 
   componentDidMount() {
+    debugger
+    this.props.fetchVideos(this.props.selectedCategory);
     this.selectVideo(this.props.videos[0]);
   }
 
   // componentDidUpdate() {
   //   this.list.scrollTop = this.list.scrollHeight;
-  // }
-
-  fetchVideos = () => {
-    this.props.fetchVideos(this.props.selectedCategory);
-  }
-
-  // renderVideo = (video) => {
-  //   return (
-  //     <div
-  //       key={video}
-  //       className={video === this.props.selectedvideo ? 'active-video' : null}
-
-
-  //     </div>
-  //   )
   // }
 
   render() {
