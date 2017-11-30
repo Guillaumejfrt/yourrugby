@@ -3,10 +3,6 @@ export const SET_VIDEOS = 'SET_VIDEOS';
 export const SELECTED_CATEGORY = 'SELECTED_CATEGORY'
 export const SELECTED_VIDEO = 'SELECTED_VIDEO'
 
-import YTSearch from 'youtube-api-search';
-
-const API_KEY = 'AIzaSyBP1JC3TAzIayhHxqCFqMXORFlwT5JKsOY'
-
 export function selectVideo(video) {
   return {
     type: SELECTED_VIDEO,
@@ -21,20 +17,9 @@ export function selectCategory(category) {
   }
 }
 
-export function fetchVideos(category) {
-  const youtubeSearch = (category) => {
-    debugger
-    return (
-      YTSearch({ key: API_KEY, term: category }, (videos) => {
-        return videos;
-      })
-    )
-  }
-
-  const videos = youtubeSearch(category);
-
+export function fetchVideos(videos) {
   return {
-    type: SET_VIDEOS,
+    type: 'FETCH_VIDEO',
     payload: videos
-  }
+  };
 }

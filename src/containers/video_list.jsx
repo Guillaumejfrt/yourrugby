@@ -1,19 +1,30 @@
 import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
+import YTSearch from 'youtube-api-search';
 
 import { fetchVideos } from '../actions';
 import { selectVideo } from '../actions';
 import { Video } from './video';
 
+const API_KEY = 'AIzaSyAFiXpwV4vRo-6uBny9fFnZTfRkqLrhmJI'
+
 class VideoList extends Component {
 
+  youtubeSearch = (word) => {
+    YTSearch({ key: API_KEY, term: word }, (videos) => {
+      this.props.fetchVideos(videos);
+    });
+  }
+
   componentWillMount() {
-    this.props.fetchVideos(this.props.selectedCategory);
+    this.youtubeSearch(this.props.selectedCategory);
   }
 
   componentDidMount() {
-    this.selectVideo(this.props.videos[0]);
+    console.log(this.props.videos);
+    // this.props.selectVideo(this.props.videos[0]);
+    // debugger
   }
 
   render() {
