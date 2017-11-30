@@ -5,7 +5,7 @@ import YTSearch from 'youtube-api-search';
 
 import { fetchVideos } from '../actions';
 import { selectVideo } from '../actions';
-import { Video } from './video';
+import Video from './video';
 
 const API_KEY = 'AIzaSyAFiXpwV4vRo-6uBny9fFnZTfRkqLrhmJI'
 
@@ -22,7 +22,6 @@ class VideoList extends Component {
   }
 
   componentDidMount() {
-    console.log(this.props.videos);
     // this.props.selectVideo(this.props.videos[0]);
     // debugger
   }

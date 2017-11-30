@@ -19,7 +19,7 @@ export function selectCategory(category) {
 
 export function fetchVideos(videos) {
   return {
-    type: 'FETCH_VIDEO',
+    type: SET_VIDEOS,
     payload: videos
   };
 }
