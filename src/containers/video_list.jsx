@@ -16,10 +16,6 @@ class VideoList extends Component {
     this.selectVideo(this.props.videos[0]);
   }
 
-  // componentDidUpdate() {
-  //   this.list.scrollTop = this.list.scrollHeight;
-  // }
-
   render() {
     return(
       <div className="video-list">

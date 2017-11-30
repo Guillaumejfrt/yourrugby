@@ -6,6 +6,7 @@ import { selectCategory } from '../actions/index';
 class CategoryList extends Component {
   handleClick = (category) => {
     this.props.selectCategory(category);
+    this.props.fetchVideos(selectedCategory);
   }
 
   renderCategory = (category) => {
@@ -38,7 +39,7 @@ function mapStateToProps(state) {
 }
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({ selectCategory }, dispatch);
+  return bindActionCreators({ selectCategory, fetchVideos }, dispatch);
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(CategoryList);
