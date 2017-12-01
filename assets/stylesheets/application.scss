@@ -1,8 +1,18 @@
 body {
   background-color: #F4F4F4;
 }
-.main {
+.selected-video-container {
   display: flex;
+  flex: 1;
+  justify-content: center;
+}
+.yourrugby-container {
+  width: 100%;
+  margin-right: 5px;
+}
+.main-react {
+  display: flex;
+  justify-content: space-between;
 }
 .app {
   margin-top: 20px;
@@ -46,13 +56,13 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    width: 55%;
-    padding: 2em;
+    padding: 22px 50px 65px 50px;
     background-color: rgba(186, 22, 22, 0.1);
     border: 1px solid #e3e3e3;
     p {
-      margin-top: 1em;
       font-weight: 600;
+      margin-bottom: 35px;
+      margin-top: 15px;
     }
   }
 }
