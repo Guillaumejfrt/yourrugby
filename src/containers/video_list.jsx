@@ -17,7 +17,7 @@ class VideoList extends Component {
     });
   }
 
-  componentWillMount() {
+  componentDidMount() {
     this.youtubeSearch(this.props.selectedCategory);
   }
 

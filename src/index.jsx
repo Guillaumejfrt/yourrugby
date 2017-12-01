@@ -2,9 +2,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
+
 // external-modules: To navigate in the app in the browser
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { createHistory as history } from 'history';
+
 // external-modules: We add 'applyMiddleware' when we use middleware like logger:
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 
@@ -20,13 +22,16 @@ import logger from 'redux-logger';
 
 // internal modules: components
 import Home from './components/home';
+
 // internal modules: containers
 import CategoryList from './containers/category_list';
+
 // internal modules: reducers
 import categoriesReducer from './reducers/categories_reducer';
 import selectedCategoryReducer from './reducers/selected_category_reducer';
 import videosReducer from './reducers/videos_reducer';
 import selectedVideoReducer from './reducers/selected_video_reducer';
+
 // internal modules: assets
 import '../assets/stylesheets/application.scss';
 
