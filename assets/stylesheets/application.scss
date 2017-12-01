@@ -1,8 +1,18 @@
 body {
   background-color: #F4F4F4;
+  overflow: hidden;
+}
+.yourrugby-container {
+  overflow: hidden;
 }
 .header {
   text-align: center;
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  width: 100%;
+  background-color: white;
+  padding-bottom: 5px;
 }
 .home {
   display: flex;

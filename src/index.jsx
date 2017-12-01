@@ -74,5 +74,5 @@ ReactDOM.render(
       </Router>
     </div>
   </Provider>,
-  document.querySelector('.container')
+  document.querySelector('.yourrugby-container')
 );
