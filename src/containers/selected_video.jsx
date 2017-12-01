@@ -17,11 +17,10 @@ class SelectedVideo extends Component {
       <div className="video-selected">
         <hr />
         <div className="selected-videocard">
-          <iframe title={video.videoId} src={url} />
-          <div className="details">
+          <div className="selected-video-title details">
             <p>{this.props.selectedVideo.snippet.title}</p>
-            <p>{this.props.selectedVideo.snippet.description}</p>
           </div>
+          <iframe title={video.videoId} src={url} />
         </div>
       </div>
     );

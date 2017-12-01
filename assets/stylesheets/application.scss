@@ -1,24 +1,68 @@
+body {
+  background-color: #F4F4F4;
+}
+.selected-video-container {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+}
+.yourrugby-container {
+  width: 100%;
+  margin-right: 5px;
+}
+.main-react {
+  display: flex;
+  justify-content: space-between;
+}
 .app {
   margin-top: 20px;
   margin-bottom: 20px;
 }
-.header {
-  text-align: center;
-}
-.categories-container {
-  margin-top: 50px;
-  text-align: center;
-}
-
-.inline {
-  padding-left: 0px;
+.video-container {
   display: flex;
-  justify-content: space-around;
-  li {
-    display: inline;
-    margin-left: 20px;
+  justify-content: flex-end;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+.video-item {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: white;
+  width: 400px;
+  height: 115px;
+  border: 1px solid #e3e3e3;
+  padding: 1em;
+  margin-bottom: 1em;
+  margin-right: 1em;
+  .video-infos {
+    padding: 1em;
+    p {
+      font-weight: 600;
+    }
+  }
+  &:hover {
     cursor: pointer;
   }
 }
-
-
+.video-selected {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-left: 3em;
+  .selected-videocard {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 22px 50px 65px 50px;
+    background-color: rgba(186, 22, 22, 0.1);
+    border: 1px solid #e3e3e3;
+    p {
+      font-weight: 600;
+      margin-bottom: 35px;
+      margin-top: 15px;
+    }
+  }
+}

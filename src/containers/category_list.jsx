@@ -22,7 +22,7 @@ class CategoryList extends Component {
   render() {
     return (
       <div className="categories-container">
-        <ul className="inline">
+        <ul className="list-inline">
           {this.props.categories.map(this.renderCategory)}
         </ul>
       </div>

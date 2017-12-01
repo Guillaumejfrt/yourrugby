@@ -56,14 +56,19 @@ const store = createStore(reducers, initialState, middlewares);
 // render an instance of the component in the DOM
 ReactDOM.render(
   <Provider store={store}>
-    <div className="main">
+    <div className="main-react">
+      <div className="menu-container">
+
+      </div>
+      <div className="selected-video-container">
+        <SelectedVideo />
+      </div>
       <Router history={history}>
         <Switch>
           <Route path="/" exact component={Home} />
           <Route path="/about" exact component={About} />
         </Switch>
       </Router>
-      <SelectedVideo />
     </div>
   </Provider>,
   document.querySelector('.container')
