@@ -4,7 +4,6 @@ import { connect } from 'react-redux';
 class SelectedVideo extends Component {
 
   render() {
-
     const video = this.props.selectedVideo.id;
 
     if (!video) {
