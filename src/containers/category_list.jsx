@@ -10,21 +10,19 @@ class CategoryList extends Component {
 
   renderCategory = (category) => {
     return (
-      <li
+      <p
         key={category}
         className={category === this.props.selectedCategory ? 'active' : null}
         onClick={() => this.handleClick(category)}>
         {category}
-      </li>
+      </p>
     )
   }
 
   render() {
     return (
       <div className="categories-container">
-        <ul className="list-inline">
-          {this.props.categories.map(this.renderCategory)}
-        </ul>
+        {this.props.categories.map(this.renderCategory)}
       </div>
     )
   }
