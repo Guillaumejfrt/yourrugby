@@ -23,7 +23,6 @@ class VideoList extends Component {
 
   componentDidMount() {
     // this.props.selectVideo(this.props.videos[0]);
-    // debugger
   }
 
   render() {

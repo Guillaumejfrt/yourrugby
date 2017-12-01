@@ -13,7 +13,7 @@ class Video extends Component {
     const video = this.props.video.snippet;
 
     return (
-      <div className="test">
+      <div className="">
         <div className="video-item" onClick={this.handleClick}>
           <div>
             <img src={video.thumbnails.default.url} alt="" />

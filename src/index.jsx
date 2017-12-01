@@ -18,12 +18,17 @@ import logger from 'redux-logger';
 // To use forms:
 // import { reducer as formReducer } from 'redux-form';
 
-// internal modules
+// internal modules: components
 import Home from './components/home';
+import About from './components/about';
+// internal modules: containers
+import SelectedVideo from './containers/selected_video';
+// internal modules: reducers
 import categoriesReducer from './reducers/categories_reducer';
 import selectedCategoryReducer from './reducers/selected_category_reducer';
 import videosReducer from './reducers/videos_reducer';
 import selectedVideoReducer from './reducers/selected_video_reducer';
+// internal modules: assets
 import '../assets/stylesheets/application.scss';
 
 // logger must be the last middleware in chain, otherwise it will log thunk and promise, not actual actions
@@ -33,7 +38,8 @@ const middlewares = applyMiddleware(reduxPromise, logger);
 const initialState = {
   categories: ["Top14", "Super15", "Aviva Premiership"],
   selectedCategory: "Top14",
-  videos: []
+  videos: [],
+  selectedVideo: {}
 };
 
 // We declare the reducers
@@ -50,11 +56,15 @@ const store = createStore(reducers, initialState, middlewares);
 // render an instance of the component in the DOM
 ReactDOM.render(
   <Provider store={store}>
-    <Router history={history}>
-      <Switch>
-        <Route path="/" exact component={Home} />
-      </Switch>
-    </Router>
+    <div className="main">
+      <Router history={history}>
+        <Switch>
+          <Route path="/" exact component={Home} />
+          <Route path="/about" exact component={About} />
+        </Switch>
+      </Router>
+      <SelectedVideo />
+    </div>
   </Provider>,
   document.querySelector('.container')
 );
