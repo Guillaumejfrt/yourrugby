@@ -21,10 +21,6 @@ class VideoList extends Component {
     this.youtubeSearch(this.props.selectedCategory);
   }
 
-  componentDidMount() {
-    // this.props.selectVideo(this.props.videos[0]);
-  }
-
   render() {
     return(
       <div className="video-list">
