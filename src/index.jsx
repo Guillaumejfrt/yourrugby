@@ -20,9 +20,8 @@ import logger from 'redux-logger';
 
 // internal modules: components
 import Home from './components/home';
-import About from './components/about';
 // internal modules: containers
-import SelectedVideo from './containers/selected_video';
+import CategoryList from './containers/category_list';
 // internal modules: reducers
 import categoriesReducer from './reducers/categories_reducer';
 import selectedCategoryReducer from './reducers/selected_category_reducer';
@@ -57,16 +56,15 @@ const store = createStore(reducers, initialState, middlewares);
 ReactDOM.render(
   <Provider store={store}>
     <div className="main-react">
-      <div className="menu-container">
-
-      </div>
-      <div className="selected-video-container">
-        <SelectedVideo />
+      <div className="header">
+        <h1 className="yourrugby-title">YouRRugby</h1>
+        <div className="menu-container">
+          <CategoryList/>
+        </div>
       </div>
       <Router history={history}>
         <Switch>
           <Route path="/" exact component={Home} />
-          <Route path="/about" exact component={About} />
         </Switch>
       </Router>
     </div>
