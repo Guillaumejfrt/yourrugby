@@ -35,6 +35,7 @@
     "youtube-api-search": "^0.0.5"
   },
   "scripts": {
+    "start": "webpack-dev-server",
     "deploy": "webpack -p && gh-pages -d dist"
   }
 }
